@@ -20,7 +20,11 @@ def is_list_of_numbers(args):
 
 def equation(a, b, c):
     solutions = []
-    if a == 0:
+    if a == 0 and b == 0 and c == 0:
+        return "True"
+    elif a == 0 and b == 0:
+        return "False"
+    elif a == 0:
         # b*x + c = 0
         x = c / b
         solutions.append(x)
@@ -44,13 +48,13 @@ def equation(a, b, c):
             solutions.append(x)
             return solutions
         else:
-            return False
+            return solutions
 
 
 def solve(args):
     if is_list_of_numbers(args):
         return equation(float(args[0]), float(args[1]), float(args[2]))
     else:
-        return "a, b and c must be numbers. Using float numbers separate them with '.'"
+        return "Incorrect input.\na, b and c must be numbers. Using float numbers separate them with '.'"
 
-print(solve([1, 2, 'g']))
+print(solve([0,0,0]))
