@@ -15,7 +15,7 @@ def is_list_of_numbers(args):
             pass
         else:
             return False
-        return True
+    return True
 
 
 def equation(a, b, c):
@@ -44,11 +44,13 @@ def equation(a, b, c):
             solutions.append(x)
             return solutions
         else:
-            return "There is no solutions!"
+            return False
 
 
 def solve(args):
     if is_list_of_numbers(args):
         return equation(float(args[0]), float(args[1]), float(args[2]))
     else:
-        return None
+        return "a, b and c must be numbers. Using float numbers separate them with '.'"
+
+print(solve([1, 2, 'g']))
