@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, session
 from equation import solve
 from save_graph import save_png
 import os
+import time
 
 app = Flask(__name__)
 
@@ -24,7 +25,8 @@ def form_post():
         result = solve([a, b, c])
         if isinstance(result, list):
             save_png(a, b, c)
-        return render_template("success.html", result=result)
+        unixtime = time.time()
+        return render_template("success.html", result=result, unixtime=unixtime)
     else:
         render_template("index.html")
 
