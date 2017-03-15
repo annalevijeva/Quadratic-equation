@@ -50,4 +50,4 @@ def solve(args):
     else:
         return "Incorrect input.\na, b and c must be numbers. Using float numbers separate them with '.'"
 
-print(solve([0, -1, 9]))
+# print(solve([0, -1, 9]))
