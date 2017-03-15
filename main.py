@@ -23,7 +23,7 @@ def form_post():
         b = request.form['b']
         c = request.form['c']
         result = solve([a, b, c])
-        if isinstance(result, list):
+        if isinstance(result, set):
             save_png(a, b, c)
         unixtime = time.time()
         return render_template("success.html", result=result, unixtime=unixtime)

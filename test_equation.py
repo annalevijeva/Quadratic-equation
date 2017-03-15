@@ -10,6 +10,6 @@ from equation import equation
 class EquationTestCase(unittest.TestCase):
     def test_solves_equation(self):
         """Solve y=1*(x**2) + 0*x - 4"""
-        solution = [2, -2]  # or [-2, 2]
+        solution = {2, -2}  # {-2, 2} = {2, -2}
         result = equation(1, 0, -4)
         self.assertEqual(solution, result)
